@@ -77,13 +77,13 @@ export default function StatementsPage() {
                   </div>
                 </div>
               </div>
-              <div className="flex items-center gap-3 sm:flex-shrink-0">
+              <div className="flex items-center flex-wrap gap-2 sm:flex-nowrap sm:gap-3 sm:flex-shrink-0">
                 <span className={`text-[10px] font-500 px-2 py-0.5 rounded-full ${statusColors[s.status] || ''}`}>{s.status}</span>
                 <span className="text-[11px] text-muted-foreground">{s.size}</span>
-                <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-border bg-muted text-[12px] text-muted-foreground hover:text-foreground transition-all">
+                <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-border bg-muted text-[12px] text-muted-foreground hover:text-foreground transition-all whitespace-nowrap">
                   <Eye size={13} /><span>View</span>
                 </button>
-                <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-primary text-primary-foreground text-[12px] font-500 hover:bg-primary/90 transition-all">
+                <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-primary text-primary-foreground text-[12px] font-500 hover:bg-primary/90 transition-all whitespace-nowrap">
                   <Download size={13} /><span>Download</span>
                 </button>
               </div>

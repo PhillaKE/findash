@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0f1e;
+  --foreground: #e2e8f0;
+  --primary: #4f8ef7;
+  --primary-foreground: #ffffff;
+  --secondary: #1f2937;
+  --secondary-foreground: #94a3b8;
+  --accent: #10d9a0;
+  --accent-foreground: #0a0f1e;
+  --muted: #1e2a3a;
+  --muted-foreground: #64748b;
+  --card: #111827;
+  --card-foreground: #e2e8f0;
+  --border: #1e2d40;
+  --input: #1a2535;
+  --ring: #4f8ef7;
+  --radius: 10px;
+  --font-sans: var(--font-geist-sans), 'Geist', sans-serif;
+  --font-mono: var(--font-geist-mono), 'Geist Mono', monospace;
+  --positive: #10d9a0;
+  --negative: #ef4444;
+  --warning: #f59e0b;
+  --warning-muted: #78350f;
+  --positive-muted: #064e3b;
+  --negative-muted: #450a0a;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    border-color: var(--border);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--muted-foreground);
+  }
+}
+
+@layer utilities {
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .text-positive {
+    color: var(--positive);
+  }
+
+  .text-negative {
+    color: var(--negative);
+  }
+
+  .text-warning-color {
+    color: var(--warning);
+  }
+
+  .bg-positive-muted {
+    background-color: rgba(16, 217, 160, 0.08);
+  }
+
+  .bg-negative-muted {
+    background-color: rgba(239, 68, 68, 0.08);
+  }
+
+  .bg-warning-muted {
+    background-color: rgba(245, 158, 11, 0.08);
+  }
+
+  .border-positive {
+    border-color: rgba(16, 217, 160, 0.3);
+  }
+
+  .border-negative {
+    border-color: rgba(239, 68, 68, 0.3);
+  }
+
+  .border-warning {
+    border-color: rgba(245, 158, 11, 0.3);
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 20px rgba(79, 142, 247, 0.15);
+  }
+
+  .card-elevated {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+
+  .fade-in {
+    animation: fadeIn 0.2s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .slide-up {
+    animation: slideUp 0.25s ease-out;
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .pulse-highlight {
+    animation: pulseHighlight 0.6s ease-out;
+  }
+
+  @keyframes pulseHighlight {
+    0% { background-color: rgba(79, 142, 247, 0.2); }
+    100% { background-color: transparent; }
+  }
+}
